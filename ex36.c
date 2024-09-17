@@ -14,13 +14,23 @@ There are:
 int main()
 {
     int amount;
-    int hun,fif,twen,tens,twos,ones;
-    hun = amount/100;
-    fif /= amount - hun*100;
+    int hun,fif,twen,tens,fives,twos,ones;
     printf("enter the amount: ");
     scanf("%d",&amount);
-    printf("%d notes of 100",amount/100);
+    hun = amount/100;
+    fif = (amount - hun*100)/50;
+    twen = (amount - (hun*100 + fif*50))/20;
+    tens = (amount - (hun*100 + fif*50 + twen*20))/10;
+    fives = (amount - (hun*100 + fif*50 + twen*20 + tens*10))/5;
+    twos = (amount - (hun*100 + fif*50 + twen*20 + tens*10 + fives*5))/2;
+    ones = (amount - (hun*100 + fif*50 + twen*20 + tens*10 + fives*5 + twos*2))/1;
+    printf("%d notes of 100\n",amount/100);
     //printf("\n%d notes of 50",(amount - amount * (amount/100)/50));
-    printf("%d notes of 50",fif);
+    printf("%d notes of 50\n",fif);
+    printf("%d notes of 20\n",twen);
+    printf("%d notes of 10\n",tens);
+    printf("%d notes of 5\n",fives);
+    printf("%d notes of 2\n",twos);
+    printf("%d notes of 1\n",ones);
     return 0;
 }
