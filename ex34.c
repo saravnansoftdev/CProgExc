@@ -8,3 +8,15 @@ Expected Output:
 Employees ID = 0342
 Salary = U$ 120000.00
  */
+
+#include<stdio.h>
+
+int main()
+{
+    char EmpID[10] = "0342";
+    int WorkingHrs = 8;
+    int SalaryHrs = 15000;
+    printf("Emplyee's ID : %s",EmpID);
+    printf("\nSalary : U$%d",WorkingHrs * SalaryHrs);
+    return 0;
+}
